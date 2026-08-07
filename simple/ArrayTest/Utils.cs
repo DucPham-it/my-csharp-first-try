@@ -1,14 +1,12 @@
-﻿using System;
+using System;
 
 namespace XTL
 {
   public static class Utils
   {
-    /// 
+    /// <summary>
     /// Chuyển phần nguyên của số thành chữ
-    /// 
-    /// Số double cần chuyển thành chữ
-    /// Chuỗi kết quả chuyển từ số
+    /// </summary>
     public static string NumberToText(double inputNumber, bool suffix = true)
     {
         string[] unitNumbers = new string[] { "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };
@@ -96,24 +94,5 @@ namespace XTL
         if (isNegative) result = "Âm " + result;
         return result + (suffix ? " đồng chẵn" : "");
       }
-  }
-}
-
-namespace Test
-{
-  public static class Program
-  {
-    public static void Main()
-    {
-      int ntest = 1000;
-      Random rn = new Random();
-      for (int i = 0; i < ntest; i++)
-      {
-        var number = rn.NextDouble() * rn.Next(1, Int32.MaxValue);
-        var text = XTL.Utils.NumberToText(number);
-        var ntext = number.ToString("###,###,###,###,###");
-        Console.WriteLine($"{ntext, 20} --> {text}");
-      }
-    }
   }
 }
