@@ -1,6 +1,30 @@
-# Rider / IntelliJ
-.idea/
+# Keep in git (needed to restore/build after clone):
+#   *.cs, *.csproj, *.sln, Directory.Build.*, nuget.config, README, etc.
+# NuGet packages are restored with: dotnet restore
+# Build output is recreated with:     dotnet build
 
-# Build output
+# Rider / IntelliJ / VS Code local IDE state
+.idea/
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Build / restore output (regenerated locally)
 bin/
 obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+
+# User-specific IDE settings (machine-local)
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# OS junk
+.DS_Store
+Thumbs.db
